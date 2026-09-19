@@ -38,8 +38,8 @@ export function Approche() {
         </div>
 
         <div className="approche-aside">
-          <figure className="framed">
-            <img src="/approche.webp" alt="Technique manuelle douce pendant une séance" />
+          <figure className="framed framed-tall">
+            <img src="/cabinet.webp" alt="Le cabinet d'ostéopathie à Paris 3" />
           </figure>
           <ul className="benefit-list">
             {approcheCards.map(({ icon: Icon, title, detail }) => (

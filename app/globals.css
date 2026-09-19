@@ -318,6 +318,7 @@ body { background: #0a161a; }
 .approche-aside { display: flex; flex-direction: column; gap: 12px; }
 .framed { margin: 0; border-radius: 4px; overflow: hidden; background: rgba(255,255,255,.05); }
 .framed img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.framed-tall img { aspect-ratio: 4 / 3; object-position: center 62%; }
 .benefit-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .benefit-list li { display: flex; align-items: flex-start; gap: 16px; padding: 20px 22px; border: 1px solid rgba(255,255,255,.1); border-radius: 4px; background: rgba(255,255,255,.035); color: rgba(255,255,255,.7); }
 .benefit-list svg { flex: none; margin-top: 2px; color: rgba(255,255,255,.75); }
