@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 
+import { bookingTrack } from '@/lib/analytics'
 import { DOCTOLIB_URL, bio, credentials } from '@/lib/content'
 
 export function Osteopathe() {
@@ -27,6 +28,7 @@ export function Osteopathe() {
             target="_blank"
             rel="noopener noreferrer"
             className="action-button action-button-light"
+            {...bookingTrack('profile')}
           >
             Prendre rendez-vous avec Illiana
             <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />

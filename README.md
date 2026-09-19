@@ -1,33 +1,39 @@
-# heal
+# osteo.tfq.one
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+Landing page for **Illiana Cacoub**, ostéopathe D.O. in Paris 3 — [osteo.tfq.one](https://osteo.tfq.one/).
 
-## Built with v0
+Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript. Bookings go to Doctolib.
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
-
-[Continue working on v0 →](https://v0.app/chat/projects/prj_w84ExAM8VStCGBuDTkuqHeDs4uiG)
-
-## Getting Started
-
-First, run the development server:
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+pnpm install
+pnpm dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Development server |
+| `pnpm build` | Production build |
+| `pnpm start` | Serve the production build |
 
-## Learn More
+`next.config.mjs` sets `typescript.ignoreBuildErrors: true`, so the build will not surface type errors — run `pnpm exec tsc --noEmit` to typecheck.
 
-To learn more, take a look at the following resources:
+## Editing content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+All copy and links live in `lib/content.ts` — headline, nav, motifs, FAQ, the Doctolib URL, phone number and address. Change wording there rather than in the components.
+
+Sections are one file each under `components/sections/`. Styling is hand-written CSS in `app/globals.css` using semantic class names; the hero defines the design system the rest of the page follows.
+
+## Analytics
+
+Umami (cloud), website `TFQ`. Two conversion events are tracked via `data-umami-event` attributes, built by the helpers in `lib/analytics.ts`:
+
+- `booking_click` — any CTA opening the Doctolib booking flow
+- `phone_click` — any `tel:` link
+
+Both carry `site`, `location` (and `provider` / `context` where relevant). No personal or medical data is sent.
+
+See `CLAUDE.md` for architecture notes.

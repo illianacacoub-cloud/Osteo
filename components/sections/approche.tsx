@@ -1,5 +1,6 @@
 import { ArrowUpRight, Check } from 'lucide-react'
 
+import { bookingTrack } from '@/lib/analytics'
 import { DOCTOLIB_URL, approcheCards, approcheChecks } from '@/lib/content'
 
 export function Approche() {
@@ -29,6 +30,7 @@ export function Approche() {
             target="_blank"
             rel="noopener noreferrer"
             className="action-button action-button-light"
+            {...bookingTrack('approach')}
           >
             Réserver sur Doctolib
             <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />

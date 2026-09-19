@@ -1,5 +1,6 @@
 import { ArrowUpRight, Phone, ShieldCheck } from 'lucide-react'
 
+import { bookingTrack, phoneTrack } from '@/lib/analytics'
 import { ADDRESS, DOCTOLIB_URL, MAPS_EMBED, MAPS_URL, PHONE_DISPLAY, PHONE_HREF } from '@/lib/content'
 
 const facts = [
@@ -38,11 +39,16 @@ export function Infos() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="action-button action-button-light"
+                {...bookingTrack('infos')}
               >
                 Réserver (Doctolib)
                 <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />
               </a>
-              <a href={PHONE_HREF} className="action-button action-button-outline">
+              <a
+                href={PHONE_HREF}
+                className="action-button action-button-outline"
+                {...phoneTrack('infos')}
+              >
                 <Phone size={15} strokeWidth={1.8} aria-hidden="true" />
                 {PHONE_DISPLAY}
               </a>

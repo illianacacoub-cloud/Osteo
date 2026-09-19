@@ -13,6 +13,8 @@ import {
   User,
 } from 'lucide-react'
 
+export const SITE_URL = 'https://osteo.tfq.one'
+
 export const DOCTOLIB_URL =
   'https://doctolib.fr/osteopathe/paris/illiana-cacoub/booking?source=landing_page'
 

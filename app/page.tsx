@@ -11,6 +11,7 @@ import { Osteopathe } from '@/components/sections/osteopathe'
 import { Seance } from '@/components/sections/seance'
 import { SiteFooter } from '@/components/sections/site-footer'
 import { DOCTOLIB_URL, PHONE_HREF, heroTags, navItems } from '@/lib/content'
+import { bookingTrack, phoneTrack } from '@/lib/analytics'
 
 const heroVideo = '/hero.mp4'
 const heroPoster = '/hero-poster.webp'
@@ -32,11 +33,13 @@ function ActionButton({
   href,
   light = false,
   arrow = false,
+  track,
 }: {
   children: string
   href: string
   light?: boolean
   arrow?: boolean
+  track?: Record<string, string>
 }) {
   const external = href.startsWith('http')
   return (
@@ -44,6 +47,7 @@ function ActionButton({
       href={href}
       className={`action-button ${light ? 'action-button-light' : 'action-button-outline'}`}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      {...track}
     >
       {children}
       {arrow && <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />}
@@ -84,8 +88,14 @@ function Hero() {
               <a href={href} key={href}>{label}</a>
             ))}
           </nav>
-          <a href={PHONE_HREF} className="call-link">Appeler</a>
-          <a href={DOCTOLIB_URL} target="_blank" rel="noopener noreferrer" className="nav-cta">
+          <a href={PHONE_HREF} className="call-link" {...phoneTrack('nav')}>Appeler</a>
+          <a
+            href={DOCTOLIB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-cta"
+            {...bookingTrack('nav')}
+          >
             Prendre RDV
           </a>
           <button className="menu-button" aria-label="Ouvrir le menu"><Menu size={21} /></button>
@@ -107,7 +117,9 @@ function Hero() {
               <StaggeredWords text="soulager vos tensions et retrouver une mobilité durable." />
             </p>
             <div className="hero-actions">
-              <ActionButton light arrow href={DOCTOLIB_URL}>Réserver une consultation</ActionButton>
+              <ActionButton light arrow href={DOCTOLIB_URL} track={bookingTrack('hero')}>
+                Réserver une consultation
+              </ActionButton>
               <ActionButton href="#motifs">Voir les motifs</ActionButton>
             </div>
             <p className="hero-note">Ouvert dans un nouvel onglet (Doctolib). Cabinet Paris 3 — accès simple.</p>

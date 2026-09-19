@@ -1,5 +1,6 @@
 import { ArrowRight, Phone } from 'lucide-react'
 
+import { bookingTrack, phoneTrack } from '@/lib/analytics'
 import { DOCTOLIB_URL, PHONE_HREF, motifs } from '@/lib/content'
 
 export function Motifs() {
@@ -22,11 +23,21 @@ export function Motifs() {
                 {items.map((item) => <li key={item}>{item}</li>)}
               </ul>
               {action === 'call' ? (
-                <a href={PHONE_HREF} className="motif-link motif-link-urgent">
+                <a
+                  href={PHONE_HREF}
+                  className="motif-link motif-link-urgent"
+                  {...phoneTrack('emergency', 'emergency')}
+                >
                   <Phone size={14} strokeWidth={1.8} aria-hidden="true" /> {actionLabel}
                 </a>
               ) : (
-                <a href={DOCTOLIB_URL} target="_blank" rel="noopener noreferrer" className="motif-link">
+                <a
+                  href={DOCTOLIB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="motif-link"
+                  {...bookingTrack('motifs')}
+                >
                   {actionLabel} <ArrowRight size={14} strokeWidth={1.8} aria-hidden="true" />
                 </a>
               )}
