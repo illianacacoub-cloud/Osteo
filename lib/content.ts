@@ -159,11 +159,12 @@ export const approcheCards: { icon: LucideIcon; title: string; detail: string }[
   },
 ]
 
+// Les retours à la ligne sont voulus : `.step-grid p` est en white-space: pre-line.
 export const seanceSteps = [
-  { step: '01', title: 'Anamnèse', detail: "Temps d'échange : motif, antécédents, objectifs." },
-  { step: '02', title: 'Tests & bilan', detail: 'Bilan global pour identifier tensions et restrictions.' },
-  { step: '03', title: 'Traitement', detail: 'Techniques manuelles adaptées, précises et douces.' },
-  { step: '04', title: 'Conseils', detail: 'Conseils personnalisés pour prolonger les bénéfices.' },
+  { step: '01', title: 'Anamnèse', detail: "Temps d'échange :\nmotif, antécédents, objectifs." },
+  { step: '02', title: 'Tests & bilan', detail: 'Bilan global pour identifier\ntensions et restrictions.' },
+  { step: '03', title: 'Traitement', detail: 'Techniques manuelles adaptées,\nprécises et douces.' },
+  { step: '04', title: 'Conseils', detail: 'Conseils personnalisés\npour prolonger les bénéfices.' },
 ]
 
 export const faq = [
