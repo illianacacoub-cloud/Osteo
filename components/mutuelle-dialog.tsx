@@ -1,6 +1,6 @@
 'use client'
 
-import { X } from 'lucide-react'
+import { ArrowUpRight, X } from 'lucide-react'
 import { useRef, type ReactNode } from 'react'
 
 import { bookingTrack } from '@/lib/analytics'
@@ -90,20 +90,21 @@ export function MutuelleDialog() {
               href={DOCTOLIB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="dialog-primary"
+              className="action-button action-button-light"
               {...bookingTrack('mutuelle')}
             >
               Prendre RDV
+              <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />
             </a>
             <button
               type="button"
-              className="dialog-secondary"
+              className="action-button action-button-outline"
               onClick={() => {
                 close()
                 document.getElementById('questions')?.scrollIntoView()
               }}
             >
-              FAQ
+              Voir la FAQ
             </button>
           </div>
           <p className="dialog-note">Informations indicatives selon votre contrat.</p>
