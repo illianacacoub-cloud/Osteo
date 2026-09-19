@@ -3,8 +3,9 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Healcure | Healthcare for Good',
-  description: 'Modern healthcare for today, tomorrow, and always.',
+  title: 'Illiana Cacoub | Ostéopathe D.O. — Paris 3',
+  description:
+    'Ostéopathe D.O. à Paris 3. Prise en charge globale pour soulager vos tensions et retrouver une mobilité durable. Adultes, nourrissons & enfants, grossesse, drainage.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -39,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

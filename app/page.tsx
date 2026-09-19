@@ -1,15 +1,18 @@
 'use client'
 
-import { ArrowUpRight, Menu, Star } from 'lucide-react'
+import { ArrowUpRight, Clock, Euro, Menu, ShieldCheck, Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-const backgroundImage = 'https://cdn.sceneai.art/Hero%20Section%20Video/802fa01f-44ef-4ab4-ac73-62015fe06eef.png'
-const avatars = [
-  'https://cdn.sceneai.art/Only%20man%20image/0ccd6017-25fc-493b-abdf-321915dde101.jpg',
-  'https://cdn.sceneai.art/Only%20man%20image/7e1339ef-7a01-4979-93c8-21d97af291ee.webp',
-  'https://cdn.sceneai.art/Image%20for%20any%20section/2d8032d8-c1cd-4827-84db-0aeba1109c1b.jpg',
-  'https://cdn.sceneai.art/Image%20for%20any%20section/470b31f2-d1b5-4730-96a2-aca680204172.jpg',
-]
+const heroVideo = '/hero.mp4'
+const heroPoster = '/hero-poster.webp'
+
+const navItems = ['Votre Ostéopathe', 'Motifs', 'Approche', 'Séance', 'Avis', 'Infos', 'Questions']
+const tags = ['Adultes', 'Nourrissons & enfants', 'Grossesse', 'Drainage']
+
+const DOCTOLIB_URL =
+  'https://doctolib.fr/osteopathe/paris/illiana-cacoub/booking?source=landing_page'
+// TODO: remplacer par le vrai numéro du cabinet.
+const PHONE = '+33100000000'
 
 function StaggeredWords({ text, className }: { text: string; className?: string }) {
   return (
@@ -23,11 +26,26 @@ function StaggeredWords({ text, className }: { text: string; className?: string 
   )
 }
 
-function ActionButton({ children, light = false }: { children: string; light?: boolean }) {
+function ActionButton({
+  children,
+  href,
+  light = false,
+  arrow = false,
+}: {
+  children: string
+  href: string
+  light?: boolean
+  arrow?: boolean
+}) {
+  const external = href.startsWith('http')
   return (
-    <a href="#contact" className={`action-button ${light ? 'action-button-light' : 'action-button-outline'}`}>
+    <a
+      href={href}
+      className={`action-button ${light ? 'action-button-light' : 'action-button-outline'}`}
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
       {children}
-      <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />
+      {arrow && <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />}
     </a>
   )
 }
@@ -40,40 +58,85 @@ export default function Page() {
   }, [])
 
   return (
-    <main
-      className={`hero-shell ${loaded ? 'is-loaded' : ''}`}
-      style={{ backgroundImage: `url("${backgroundImage}")` }}
-    >
+    <main className={`hero-shell ${loaded ? 'is-loaded' : ''}`}>
+      <video
+        className="hero-video"
+        src={heroVideo}
+        poster={heroPoster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        tabIndex={-1}
+      />
       <div className="hero-overlay" />
       <div className="hero-container">
         <header className="site-header">
-          <a href="#top" className="wordmark">Healcure</a>
-          <nav className="desktop-nav" aria-label="Main navigation">
-            {['Home', 'About', 'Services', 'Doctors', 'Blog'].map((item) => (
-              <a href={`#${item.toLowerCase()}`} key={item}>{item}</a>
+          <a href="#top" className="wordmark">
+            <span className="wordmark-name">Illiana Cacoub</span>
+            <span className="wordmark-role">Ostéopathe D.O. — Paris 3</span>
+          </a>
+          <nav className="desktop-nav" aria-label="Navigation principale">
+            {navItems.map((item) => (
+              <a href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} key={item}>{item}</a>
             ))}
           </nav>
-          <a href="#contact" className="nav-cta">Book An Appointment <ArrowUpRight aria-hidden="true" size={15} /></a>
-          <button className="menu-button" aria-label="Open menu"><Menu size={21} /></button>
+          <a href={`tel:${PHONE}`} className="call-link">Appeler</a>
+          <a href={DOCTOLIB_URL} target="_blank" rel="noopener noreferrer" className="nav-cta">
+            Prendre RDV
+          </a>
+          <button className="menu-button" aria-label="Ouvrir le menu"><Menu size={21} /></button>
         </header>
 
         <section className="hero-content" id="top">
           <div className="hero-copy">
-            <div className="trusted-badge"><span>Trusted</span><span>20,000+ Patients Worldwide</span></div>
-            <h1><StaggeredWords text="Healthcare for Good" /><br /><StaggeredWords text="Today. Tomorrow. Always." /></h1>
-            <p><StaggeredWords text="Take charge of your well-being and explore the many" /><br className="desktop-break" /><StaggeredWords text="advantages of modern healthcare through our trusted platform." /></p>
-            <div className="hero-actions"><ActionButton light>Book An Appointment</ActionButton><ActionButton>About Us</ActionButton></div>
+            <ul className="tag-row">
+              {tags.map((tag) => <li key={tag}>{tag}</li>)}
+            </ul>
+            <h1>
+              <StaggeredWords text="Redonnez à votre corps" />
+              <br />
+              <StaggeredWords text="sa liberté de mouvement." />
+            </h1>
+            <p>
+              <StaggeredWords text="Ostéopathe D.O. à Paris 3 — Prise en charge globale pour" />
+              <br className="desktop-break" />
+              <StaggeredWords text="soulager vos tensions et retrouver une mobilité durable." />
+            </p>
+            <div className="hero-actions">
+              <ActionButton light arrow href={DOCTOLIB_URL}>Réserver une consultation</ActionButton>
+              <ActionButton href="#motifs">Voir les motifs</ActionButton>
+            </div>
+            <p className="hero-note">Ouvert dans un nouvel onglet (Doctolib). Cabinet Paris 3 — accès simple.</p>
           </div>
 
-          <div className="review-block" aria-label="Patient reviews">
-            <div className="avatar-stack">
-              {avatars.map((avatar, index) => <img key={avatar} src={avatar} alt={`Patient reviewer ${index + 1}`} />)}
+          <dl className="stat-row">
+            <div className="stat">
+              <dt>
+                5/5
+                <span className="stars" aria-label="5 étoiles sur 5">
+                  <Star size={13} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+                </span>
+              </dt>
+              <dd>Google (10 avis)</dd>
             </div>
-            <div className="review-copy"><div className="stars" aria-label="5 out of 5 stars">{Array.from({ length: 5 }).map((_, index) => <Star key={index} size={13} fill="currentColor" />)}</div><span>Baser on 20K+ Reviews</span></div>
-          </div>
+            <div className="stat">
+              <dt>45 min <Clock size={13} strokeWidth={1.7} aria-hidden="true" /></dt>
+              <dd>durée moyenne</dd>
+            </div>
+            <div className="stat">
+              <dt>80€ <Euro size={13} strokeWidth={1.7} aria-hidden="true" /></dt>
+              <dd>tarif</dd>
+            </div>
+            <div className="mutuelles-badge">
+              <ShieldCheck size={14} strokeWidth={1.8} aria-hidden="true" />
+              Mutuelles OK
+            </div>
+          </dl>
         </section>
       </div>
     </main>
   )
 }
-
