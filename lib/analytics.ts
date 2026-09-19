@@ -17,6 +17,7 @@ export type TrackLocation =
   | 'infos'
   | 'footer'
   | 'emergency'
+  | 'mutuelle'
 
 export function bookingTrack(location: TrackLocation): Record<string, string> {
   return {

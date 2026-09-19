@@ -3,6 +3,7 @@
 import { ArrowUpRight, Clock, Euro, Menu, ShieldCheck, Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
+import { MutuelleDialog, MutuelleTrigger } from '@/components/mutuelle-dialog'
 import { Approche } from '@/components/sections/approche'
 import { Faq } from '@/components/sections/faq'
 import { Infos } from '@/components/sections/infos'
@@ -143,10 +144,10 @@ function Hero() {
               <dt>80€ <Euro size={13} strokeWidth={1.7} aria-hidden="true" /></dt>
               <dd>tarif</dd>
             </div>
-            <div className="mutuelles-badge">
+            <MutuelleTrigger className="mutuelles-badge">
               <ShieldCheck size={14} strokeWidth={1.8} aria-hidden="true" />
               Mutuelles OK
-            </div>
+            </MutuelleTrigger>
           </dl>
         </div>
       </div>
@@ -165,6 +166,7 @@ export default function Page() {
       <Infos />
       <Faq />
       <SiteFooter />
+      <MutuelleDialog />
     </main>
   )
 }

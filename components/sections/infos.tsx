@@ -1,5 +1,6 @@
 import { ArrowUpRight, Phone, ShieldCheck } from 'lucide-react'
 
+import { MutuelleTrigger } from '@/components/mutuelle-dialog'
 import { bookingTrack, phoneTrack } from '@/lib/analytics'
 import { ADDRESS, ADDRESS_LINES, DOCTOLIB_URL, MAPS_EMBED, MAPS_URL, PHONE_DISPLAY, PHONE_HREF } from '@/lib/content'
 
@@ -28,10 +29,10 @@ export function Infos() {
               ))}
             </dl>
 
-            <p className="mutuelle-note">
+            <MutuelleTrigger className="mutuelle-note">
               <ShieldCheck size={14} strokeWidth={1.8} aria-hidden="true" />
               Mutuelle : remboursement ostéopathie ?
-            </p>
+            </MutuelleTrigger>
 
             <div className="infos-actions">
               <a

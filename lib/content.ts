@@ -2,11 +2,14 @@ import type { LucideIcon } from 'lucide-react'
 import {
   Activity,
   Baby,
+  FileText,
+  Search,
   Dumbbell,
   GraduationCap,
   HandHeart,
   Feather,
   MapPin,
+  ShieldCheck,
   Siren,
   Stethoscope,
   Waves,
@@ -172,6 +175,30 @@ export const seanceSteps = [
   { step: '02', title: 'Tests & bilan', detail: 'Bilan global pour identifier\ntensions et restrictions.' },
   { step: '03', title: 'Traitement', detail: 'Techniques manuelles adaptées,\nprécises et douces.' },
   { step: '04', title: 'Conseils', detail: 'Conseils personnalisés\npour prolonger les bénéfices.' },
+]
+
+/** Année affichée dans le titre de la modale mutuelles — à revoir chaque année. */
+export const MUTUELLE_YEAR = 2026
+
+export const mutuelleBlocks: { icon: LucideIcon; title: string; body?: string; items?: string[] }[] = [
+  {
+    icon: ShieldCheck,
+    title: 'Prise en charge par votre mutuelle',
+    body: "L'ostéopathie n'est pas remboursée par la Sécu, mais la plupart des mutuelles proposent un forfait annuel ou par séance.",
+  },
+  {
+    icon: Search,
+    title: 'Comment vérifier ?',
+    items: [
+      'Consultez votre tableau de garanties (« médecines douces »).',
+      'Contactez votre mutuelle pour confirmer votre forfait.',
+    ],
+  },
+  {
+    icon: FileText,
+    title: 'Documents à fournir',
+    body: 'Une facture nominative vous sera remise par email après la séance pour votre remboursement.',
+  },
 ]
 
 export const faq = [
