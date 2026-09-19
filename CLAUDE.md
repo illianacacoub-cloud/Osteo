@@ -17,20 +17,24 @@ There is no lint or test script and no test framework installed. `next.config.mj
 
 ## Architecture
 
-Single-page Next.js 16 App Router marketing site ("Healcure" healthcare landing page), React 19, Tailwind CSS v4, TypeScript.
+Single-page Next.js 16 App Router site for Illiana Cacoub, ostéopathe D.O. in Paris 3. React 19, Tailwind CSS v4, TypeScript. Content is French throughout.
 
-- `app/layout.tsx` — root layout; metadata/favicons/viewport, and gates `@vercel/analytics` behind `NODE_ENV === 'production'`.
-- `app/page.tsx` — the entire page. A `'use client'` component whose only state is a `loaded` flag set in `useEffect`, which adds `.is-loaded` to the root element to trigger the CSS entry animations. Local helpers `StaggeredWords` (splits text into `.word-reveal` spans with staggered `animationDelay`) and `ActionButton`.
-- `app/globals.css` — everything visual. Three layers in one file: (1) Tailwind v4 + shadcn theme setup (`@theme inline`, oklch design tokens on `:root`, dark overrides under `prefers-color-scheme`); (2) hand-written plain CSS for the hero (`.hero-shell`, `.hero-container`, `.site-header`, `.action-button`, `@keyframes fade-in` / `word-in`, and a single `max-width: 700px` block); (3) a `@layer base` reset.
+- `lib/content.ts` — **all copy and links live here** (nav, booking URL, phone, address, motifs, FAQ…). Change wording here, not in the components. Section data arrays are typed and carry their own lucide `icon`.
+- `app/page.tsx` — composes the page: a local `Hero` (the only stateful part: a `loaded` flag that adds `.is-loaded` to trigger entry animations) followed by the section components in order.
+- `components/sections/*.tsx` — one file per section (osteopathe, motifs, approche, seance, infos, faq, site-footer). Only `faq.tsx` is `'use client'` (accordion state); the rest are server components.
+- `app/layout.tsx` — metadata/favicons/viewport, `lang="fr"`, gates `@vercel/analytics` behind `NODE_ENV === 'production'`.
+- `app/globals.css` — everything visual, in one file: (1) Tailwind v4 + shadcn theme setup (`@theme inline`, oklch tokens); (2) the hero block; (3) the section block; (4) a `@layer base` reset.
 
-The hero is deliberately **not** styled with Tailwind utilities — it uses semantic classes in this stylesheet. Match that convention when editing the hero; use Tailwind/shadcn tokens for new shared components.
+**Styling convention: no Tailwind utilities in the markup.** The hero and every section use semantic class names defined in `globals.css`. The hero is the design system the rest of the page follows — dark ground (`#0a161a`, alternating `#0c1a1f` / `#071114`), Arial, 4px radii, `rgba(255,255,255,.1)` hairlines, `rgba(255,255,255,.035)` card fills, uppercase `.09em` micro-labels, and the shared `.action-button` / `.action-button-light` pair. Reuse those tokens rather than inventing new ones.
+
+Media in `public/` is derived from `hero.mp4` (poster and section stills were cut from it with ffmpeg); `illiana.webp` is her real portrait.
 
 ## Conventions
 
 - Tailwind v4 has no `tailwind.config` — configuration lives in `app/globals.css` (`@theme inline`) and PostCSS uses `@tailwindcss/postcss`.
 - shadcn is configured (`components.json`, style `base-nova`, baseColor `neutral`, lucide icons) and primitives are built on `@base-ui/react`, not Radix. `components/ui/button.tsx` is the only component so far and is the reference for the cva variant pattern. Add components with `pnpm dlx shadcn@latest add <name>`.
 - Import alias `@/*` maps to the repo root (`@/lib/utils`, `@/components/ui/...`). `cn()` in `lib/utils.ts` is the clsx + tailwind-merge helper.
-- `images.unoptimized: true`; remote images (from `cdn.sceneai.art`) are used via plain `<img>` tags, not `next/image`.
+- `images.unoptimized: true`; all imagery is local in `public/` and used via plain `<img>` tags, not `next/image`.
 
 ## v0 linkage
 

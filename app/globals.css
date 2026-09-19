@@ -256,6 +256,142 @@ p { margin: 22px 0 0; color: rgba(255,255,255,.77); font-size: 15.5px; line-heig
   .stat dt { font-size: 17px; }
 }
 
+
+/* ---- Sections (design system du hero) ---- */
+
+body { background: #0a161a; }
+
+.section { position: relative; padding: 116px 0; background: #0a161a; color: #fff; font-family: Arial, Helvetica, sans-serif; }
+.section-alt { background: #0c1a1f; }
+.section-deep { background: #071114; }
+.section + .section { border-top: 1px solid rgba(255,255,255,.08); }
+
+.container { width: min(100% - 48px, 1340px); margin: 0 auto; }
+.container-narrow { width: min(100% - 48px, 940px); }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .92fr); gap: 78px; align-items: start; }
+
+.eyebrow { margin: 0 0 18px; color: rgba(255,255,255,.55); font-size: 10.5px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
+.section h2 { margin: 0; color: #fff; font-size: clamp(30px, 3.1vw, 44px); line-height: 1.1; letter-spacing: -.045em; font-weight: 500; }
+.section h3 { margin: 0; color: #fff; font-size: 17.5px; font-weight: 600; letter-spacing: -.02em; }
+.lede { margin: 26px 0 0; max-width: 620px; color: rgba(255,255,255,.7); font-size: 15.5px; line-height: 1.62; }
+.lede-wide { max-width: 860px; }
+.method { margin: 24px 0 0; color: #fff; font-size: 18px; font-weight: 600; letter-spacing: -.02em; }
+
+.section-head-row { display: flex; align-items: baseline; justify-content: space-between; gap: 28px; padding-bottom: 26px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.section-aside { margin: 0; color: rgba(255,255,255,.6); font-size: 13.5px; }
+
+/* Votre ostéopathe */
+.credential-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 44px 0 0; padding: 0; list-style: none; }
+.credential-grid li { display: flex; flex-direction: column; padding: 22px 20px 24px; border: 1px solid rgba(255,255,255,.1); border-radius: 4px; background: rgba(255,255,255,.035); }
+.credential-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-bottom: 20px; border-radius: 999px; background: rgba(255,255,255,.08); color: #fff; }
+.credential-label { color: rgba(255,255,255,.55); font-size: 10.5px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
+.credential-grid strong { margin-top: 7px; color: #fff; font-size: 15.5px; font-weight: 600; letter-spacing: -.015em; }
+.credential-detail { margin-top: 6px; color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.45; }
+.credential-grid + .action-button { margin-top: 40px; }
+
+.portrait { margin: 0; border-radius: 4px; overflow: hidden; background: rgba(255,255,255,.05); }
+.portrait img { display: block; width: 100%; height: 100%; max-height: 640px; object-fit: cover; }
+
+/* Motifs */
+.motif-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 52px 0 0; padding: 0; list-style: none; }
+.motif-card { display: flex; flex-direction: column; padding: 28px 26px 26px; border: 1px solid rgba(255,255,255,.1); border-radius: 4px; background: rgba(255,255,255,.035); transition: background .2s ease, border-color .2s ease; }
+.motif-card:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.2); }
+.motif-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; margin-bottom: 20px; border-radius: 999px; background: rgba(255,255,255,.08); color: #fff; }
+.motif-items { margin: 20px 0 0; padding: 20px 0 0; border-top: 1px solid rgba(255,255,255,.1); list-style: none; }
+.motif-items li { position: relative; padding-left: 16px; color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.5; }
+.motif-items li + li { margin-top: 11px; }
+.motif-items li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.4); }
+.motif-link { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 26px; color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+.motif-link svg { transition: transform .2s ease; }
+.motif-link:hover svg { transform: translateX(3px); }
+.motif-link-urgent { color: #ff9a8a; }
+.motif-card.is-urgent { border-color: rgba(255,154,138,.32); }
+.motif-card.is-urgent .motif-icon { background: rgba(255,154,138,.14); color: #ff9a8a; }
+
+/* Approche */
+.check-list { margin: 34px 0 0; padding: 0; list-style: none; }
+.check-list li { display: flex; align-items: center; gap: 13px; color: rgba(255,255,255,.84); font-size: 15px; }
+.check-list li + li { margin-top: 15px; }
+.check-mark { display: inline-flex; align-items: center; justify-content: center; width: 21px; height: 21px; flex: none; border-radius: 999px; background: rgba(122,214,168,.16); color: #7ad6a8; }
+.check-list + .action-button { margin-top: 40px; }
+
+.approche-aside { display: flex; flex-direction: column; gap: 12px; }
+.framed { margin: 0; border-radius: 4px; overflow: hidden; background: rgba(255,255,255,.05); }
+.framed img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.benefit-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.benefit-list li { display: flex; align-items: flex-start; gap: 16px; padding: 20px 22px; border: 1px solid rgba(255,255,255,.1); border-radius: 4px; background: rgba(255,255,255,.035); color: rgba(255,255,255,.7); }
+.benefit-list svg { flex: none; margin-top: 2px; color: rgba(255,255,255,.75); }
+.benefit-list strong { display: block; color: #fff; font-size: 15px; font-weight: 600; letter-spacing: -.015em; }
+.benefit-list span { display: block; margin-top: 5px; font-size: 13.5px; line-height: 1.5; }
+
+/* Séance */
+.seance-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 46px; }
+.step-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px; margin: 56px 0 0; padding: 0; list-style: none; counter-reset: none; }
+.step-number { display: block; color: rgba(255,255,255,.26); font-size: 34px; font-weight: 600; letter-spacing: -.04em; }
+.step-grid strong { display: block; margin-top: 14px; color: #fff; font-size: 16.5px; font-weight: 600; letter-spacing: -.02em; }
+.step-grid p { margin: 10px 0 0; color: rgba(255,255,255,.62); font-size: 13.5px; line-height: 1.55; }
+
+/* Infos pratiques */
+.infos-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .82fr); gap: 12px; margin-top: 46px; align-items: stretch; }
+.infos-card { display: flex; flex-direction: column; padding: 34px 32px; border: 1px solid rgba(255,255,255,.1); border-radius: 4px; background: rgba(255,255,255,.035); }
+.fact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 34px; margin: 0; }
+.fact-grid dt { color: rgba(255,255,255,.55); font-size: 10.5px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
+.fact-grid dd { margin: 9px 0 0; color: #fff; font-size: 19px; font-weight: 500; letter-spacing: -.025em; line-height: 1.35; }
+.mutuelle-note { display: inline-flex; align-items: center; gap: 8px; margin: 26px 0 0; color: #7ad6a8; font-size: 13px; }
+.infos-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: auto; padding-top: 34px; }
+
+.map-card { position: relative; min-height: 340px; border: 1px solid rgba(255,255,255,.1); border-radius: 4px; overflow: hidden; }
+.map-card iframe { width: 100%; height: 100%; min-height: 340px; border: 0; display: block; }
+.map-link { position: absolute; bottom: 14px; left: 14px; display: inline-flex; align-items: center; gap: 6px; padding: 8px 13px; border-radius: 3px; background: rgba(10,22,26,.9); color: #fff; font-size: 12.5px; font-weight: 500; text-decoration: none; }
+.map-link:hover { background: #0a161a; }
+
+/* FAQ */
+.faq-list { margin: 44px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { border: 1px solid rgba(255,255,255,.1); border-radius: 4px; background: rgba(255,255,255,.035); overflow: hidden; transition: border-color .2s ease; }
+.faq-item.is-open { border-color: rgba(255,255,255,.26); }
+.faq-item button { display: flex; align-items: center; justify-content: space-between; gap: 22px; width: 100%; padding: 24px 26px; border: 0; background: transparent; color: #fff; font-family: inherit; font-size: 15.5px; font-weight: 500; letter-spacing: -.015em; text-align: left; cursor: pointer; }
+.faq-item button svg { flex: none; color: rgba(255,255,255,.55); }
+.faq-item button:hover svg { color: #fff; }
+.faq-panel { padding: 0 26px 26px; }
+.faq-panel p { margin: 0; color: rgba(255,255,255,.66); font-size: 14.5px; line-height: 1.6; }
+
+/* Footer */
+.site-footer { padding: 76px 0 64px; background: #050d10; color: #fff; font-family: Arial, Helvetica, sans-serif; border-top: 1px solid rgba(255,255,255,.08); }
+.footer-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr); gap: 44px; }
+.footer-grid p { margin: 0 0 11px; color: rgba(255,255,255,.72); font-size: 14px; }
+.footer-grid a { color: inherit; text-decoration: none; transition: color .18s ease; }
+.footer-grid a:hover { color: #fff; }
+.footer-brand { color: #fff; font-size: 19px; font-weight: 600; letter-spacing: -.02em; }
+.footer-role { color: rgba(255,255,255,.55) !important; margin-bottom: 20px !important; }
+.footer-heading { color: #fff !important; font-weight: 600; margin-bottom: 16px !important; }
+.footer-muted { color: rgba(255,255,255,.45) !important; font-size: 13px !important; }
+
+@media (max-width: 1100px) {
+  .split, .infos-layout { grid-template-columns: 1fr; gap: 48px; }
+  .motif-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .step-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 28px; }
+  .portrait img { max-height: 520px; }
+}
+
+@media (max-width: 820px) {
+  .section { padding: 78px 0; }
+  .container, .container-narrow { width: min(100% - 36px, 1340px); }
+  .credential-grid, .motif-grid, .seance-media, .step-grid, .fact-grid, .footer-grid { grid-template-columns: 1fr; }
+  .seance-media { gap: 10px; }
+  .step-grid { gap: 30px; }
+  .fact-grid { gap: 24px; }
+  .section-head-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .infos-card { padding: 26px 22px; }
+  .infos-actions .action-button { width: 100%; }
+  .faq-item button { padding: 20px; font-size: 14.5px; }
+  .faq-panel { padding: 0 20px 22px; }
+  .footer-grid { gap: 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motif-link svg { transition: none; }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

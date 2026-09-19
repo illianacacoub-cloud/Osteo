@@ -3,16 +3,17 @@
 import { ArrowUpRight, Clock, Euro, Menu, ShieldCheck, Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
+import { Approche } from '@/components/sections/approche'
+import { Faq } from '@/components/sections/faq'
+import { Infos } from '@/components/sections/infos'
+import { Motifs } from '@/components/sections/motifs'
+import { Osteopathe } from '@/components/sections/osteopathe'
+import { Seance } from '@/components/sections/seance'
+import { SiteFooter } from '@/components/sections/site-footer'
+import { DOCTOLIB_URL, PHONE_HREF, heroTags, navItems } from '@/lib/content'
+
 const heroVideo = '/hero.mp4'
 const heroPoster = '/hero-poster.webp'
-
-const navItems = ['Votre Ostéopathe', 'Motifs', 'Approche', 'Séance', 'Avis', 'Infos', 'Questions']
-const tags = ['Adultes', 'Nourrissons & enfants', 'Grossesse', 'Drainage']
-
-const DOCTOLIB_URL =
-  'https://doctolib.fr/osteopathe/paris/illiana-cacoub/booking?source=landing_page'
-// TODO: remplacer par le vrai numéro du cabinet.
-const PHONE = '+33100000000'
 
 function StaggeredWords({ text, className }: { text: string; className?: string }) {
   return (
@@ -50,7 +51,7 @@ function ActionButton({
   )
 }
 
-export default function Page() {
+function Hero() {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -58,7 +59,7 @@ export default function Page() {
   }, [])
 
   return (
-    <main className={`hero-shell ${loaded ? 'is-loaded' : ''}`}>
+    <section className={`hero-shell ${loaded ? 'is-loaded' : ''}`}>
       <video
         className="hero-video"
         src={heroVideo}
@@ -79,21 +80,21 @@ export default function Page() {
             <span className="wordmark-role">Ostéopathe D.O. — Paris 3</span>
           </a>
           <nav className="desktop-nav" aria-label="Navigation principale">
-            {navItems.map((item) => (
-              <a href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} key={item}>{item}</a>
+            {navItems.map(({ label, href }) => (
+              <a href={href} key={href}>{label}</a>
             ))}
           </nav>
-          <a href={`tel:${PHONE}`} className="call-link">Appeler</a>
+          <a href={PHONE_HREF} className="call-link">Appeler</a>
           <a href={DOCTOLIB_URL} target="_blank" rel="noopener noreferrer" className="nav-cta">
             Prendre RDV
           </a>
           <button className="menu-button" aria-label="Ouvrir le menu"><Menu size={21} /></button>
         </header>
 
-        <section className="hero-content" id="top">
+        <div className="hero-content" id="top">
           <div className="hero-copy">
             <ul className="tag-row">
-              {tags.map((tag) => <li key={tag}>{tag}</li>)}
+              {heroTags.map((tag) => <li key={tag}>{tag}</li>)}
             </ul>
             <h1>
               <StaggeredWords text="Redonnez à votre corps" />
@@ -135,8 +136,23 @@ export default function Page() {
               Mutuelles OK
             </div>
           </dl>
-        </section>
+        </div>
       </div>
+    </section>
+  )
+}
+
+export default function Page() {
+  return (
+    <main>
+      <Hero />
+      <Osteopathe />
+      <Motifs />
+      <Approche />
+      <Seance />
+      <Infos />
+      <Faq />
+      <SiteFooter />
     </main>
   )
 }
