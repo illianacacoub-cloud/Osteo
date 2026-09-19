@@ -5,14 +5,14 @@ import { DOCTOLIB_URL, bio, credentials } from '@/lib/content'
 
 export function Osteopathe() {
   return (
-    <section className="section" id="osteopathe">
-      <div className="container split">
+    <section className="section section-light" id="osteopathe">
+      <div className="container split" data-reveal>
         <div>
           <p className="eyebrow">Votre Ostéopathe</p>
           <h2>Illiana Cacoub</h2>
           <p className="lede">{bio}</p>
 
-          <ul className="credential-grid">
+          <ul className="credential-grid" data-reveal data-reveal-stagger>
             {credentials.map(({ icon: Icon, label, title, detail }) => (
               <li key={label}>
                 <span className="credential-icon"><Icon size={17} strokeWidth={1.6} aria-hidden="true" /></span>

@@ -14,7 +14,7 @@ export function Faq() {
         <p className="eyebrow">Questions</p>
         <h2>Questions fréquentes</h2>
 
-        <ul className="faq-list">
+        <ul className="faq-list" data-reveal data-reveal-stagger>
           {faq.map(({ question, answer }, index) => {
             const isOpen = open === index
             return (

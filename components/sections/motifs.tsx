@@ -5,16 +5,16 @@ import { DOCTOLIB_URL, PHONE_HREF, motifs } from '@/lib/content'
 
 export function Motifs() {
   return (
-    <section className="section section-alt" id="motifs">
+    <section className="section" id="motifs">
       <div className="container">
-        <p className="eyebrow">Motifs</p>
+        <p className="eyebrow" data-reveal>Motifs</p>
         <h2>Motifs de consultation</h2>
         <p className="lede lede-wide">
           Des douleurs ou gênes qui s&apos;installent ?<br />
           L&apos;objectif : comprendre, traiter, puis vous donner des conseils concrets pour prolonger les effets.
         </p>
 
-        <ul className="motif-grid">
+        <ul className="motif-grid" data-reveal data-reveal-stagger>
           {motifs.map(({ icon: Icon, title, items, action, actionLabel, urgent }) => (
             <li key={title} className={`motif-card ${urgent ? 'is-urgent' : ''}`}>
               <span className="motif-icon"><Icon size={18} strokeWidth={1.6} aria-hidden="true" /></span>

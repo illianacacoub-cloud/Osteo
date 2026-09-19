@@ -12,12 +12,12 @@ const facts = [
 
 export function Infos() {
   return (
-    <section className="section section-alt" id="infos">
+    <section className="section section-light" id="infos">
       <div className="container">
         <p className="eyebrow">Infos</p>
         <h2>Infos pratiques</h2>
 
-        <div className="infos-layout">
+        <div className="infos-layout" data-reveal data-reveal-stagger>
           <div className="infos-card">
             <dl className="fact-grid">
               {facts.map(({ label, value }) => (

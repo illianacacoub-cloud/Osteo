@@ -5,8 +5,8 @@ import { DOCTOLIB_URL, approcheCards, approcheChecks } from '@/lib/content'
 
 export function Approche() {
   return (
-    <section className="section" id="approche">
-      <div className="container split">
+    <section className="section section-light" id="approche">
+      <div className="container split" data-reveal>
         <div>
           <p className="eyebrow">Approche</p>
           <h2>Approche &amp; bénéfices</h2>
