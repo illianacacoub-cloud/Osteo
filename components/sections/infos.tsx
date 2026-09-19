@@ -1,13 +1,13 @@
 import { ArrowUpRight, Phone, ShieldCheck } from 'lucide-react'
 
 import { bookingTrack, phoneTrack } from '@/lib/analytics'
-import { ADDRESS, DOCTOLIB_URL, MAPS_EMBED, MAPS_URL, PHONE_DISPLAY, PHONE_HREF } from '@/lib/content'
+import { ADDRESS, ADDRESS_LINES, DOCTOLIB_URL, MAPS_EMBED, MAPS_URL, PHONE_DISPLAY, PHONE_HREF } from '@/lib/content'
 
 const facts = [
-  { label: 'Adresse', value: ADDRESS },
+  { label: 'Adresse', value: ADDRESS_LINES },
   { label: 'Tarif', value: '80€' },
   { label: 'Durée', value: '45 min' },
-  { label: 'Mutuelles', value: 'Remboursement possible selon contrat' },
+  { label: 'Mutuelles', value: 'Remboursement possible\nselon contrat' },
 ]
 
 export function Infos() {

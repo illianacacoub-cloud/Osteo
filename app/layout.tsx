@@ -3,7 +3,14 @@ import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import './globals.css'
 
-import { DOCTOLIB_URL, PHONE_DISPLAY, SITE_URL } from '@/lib/content'
+import {
+  ADDRESS_CITY,
+  ADDRESS_POSTCODE,
+  ADDRESS_STREET,
+  DOCTOLIB_URL,
+  PHONE_DISPLAY,
+  SITE_URL,
+} from '@/lib/content'
 
 const title = 'Illiana Cacoub — Ostéopathe D.O. à Paris 3'
 const description =
@@ -67,9 +74,9 @@ const jsonLd = {
   medicalSpecialty: 'Osteopathic',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '41 rue de Turbigo',
-    postalCode: '75003',
-    addressLocality: 'Paris',
+    streetAddress: ADDRESS_STREET,
+    postalCode: ADDRESS_POSTCODE,
+    addressLocality: ADDRESS_CITY,
     addressCountry: 'FR',
   },
   areaServed: { '@type': 'City', name: 'Paris' },

@@ -21,7 +21,14 @@ export const DOCTOLIB_URL =
 export const PHONE_DISPLAY = '07 87 26 15 08'
 export const PHONE_HREF = 'tel:+33787261508'
 
-export const ADDRESS = '41 rue de Turbigo, 75003 Paris'
+export const ADDRESS_STREET = '41 rue de Turbigo'
+export const ADDRESS_POSTCODE = '75003'
+export const ADDRESS_CITY = 'Paris'
+
+/** Sur une ligne — footer, titre de l'iframe, données structurées. */
+export const ADDRESS = `${ADDRESS_STREET}, ${ADDRESS_POSTCODE} ${ADDRESS_CITY}`
+/** Sur deux lignes — carte « Infos pratiques » (white-space: pre-line). */
+export const ADDRESS_LINES = `${ADDRESS_STREET},\n${ADDRESS_POSTCODE} ${ADDRESS_CITY}`
 export const MAPS_URL = 'https://maps.google.com/?q=41+rue+de+Turbigo,+75003+Paris'
 export const MAPS_EMBED = 'https://maps.google.com/maps?q=41+rue+de+Turbigo,+75003+Paris&z=16&output=embed'
 
