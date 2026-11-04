@@ -71,6 +71,60 @@ export function Blog() {
             </details>
           </div>
         </article>
+
+        <article className="blog-secondary">
+          <div className="blog-secondary-image">
+            <img src="/blog-maternite-nourrisson-paris.png" alt="Massage doux des pieds d'un nourrisson" />
+          </div>
+          <div className="blog-secondary-content">
+            <div className="blog-meta"><span>Novembre 2026</span><span className="blog-meta-dot" aria-hidden="true" /><span><MapPin size={13} aria-hidden="true" /> Paris</span></div>
+            <h3>Maternité et nourrisson : ostéopathie à Paris</h3>
+            <p className="blog-excerpt">Grossesse, arrivée de bébé, allaitement, sommeil, tensions corporelles… La maternité est une période de grands changements, aussi bien pour la maman que pour son bébé.</p>
+            <p className="blog-author">Par Illiana Cacoub, ostéopathe D.O. à Paris 3</p>
+
+            <details className="blog-details">
+              <summary>Lire l’article <ArrowUpRight size={16} aria-hidden="true" /></summary>
+              <div className="blog-full-article">
+                <p>À Paris, je vous accompagne pendant la grossesse et après la naissance, pour vous aider à traverser ces différentes étapes avec davantage de confort et de sérénité.</p>
+                <p>Pendant la grossesse, le corps s’adapte progressivement pour accompagner le développement du bébé. Après la naissance, le nourrisson découvre son nouvel environnement et développe peu à peu ses capacités motrices et sensorielles. Ces différentes étapes peuvent parfois s’accompagner d’inconforts ou de tensions.</p>
+                <section>
+                  <h4>Pendant la grossesse</h4>
+                  <p>Les transformations du corps peuvent entraîner différentes manifestations :</p>
+                  <ul>
+                    <li>Douleurs lombaires et tensions dans le bassin</li>
+                    <li>Sensation de pesanteur</li>
+                    <li>Tensions dans le dos et les cervicales</li>
+                    <li>Inconfort au niveau du diaphragme et de la respiration</li>
+                    <li>Difficultés à trouver une position confortable pour dormir</li>
+                  </ul>
+                  <p>L’ostéopathie peut accompagner la future maman dans cette période de changements, en travaillant sur sa mobilité et son confort au quotidien.</p>
+                </section>
+                <section>
+                  <h4>Après la naissance : accompagner bébé</h4>
+                  <p>La naissance et les premières semaines de vie sont une période d’adaptation importante pour le nourrisson. Certains bébés peuvent présenter des manifestations telles que :</p>
+                  <ul>
+                    <li>Des difficultés à téter au sein ou au biberon</li>
+                    <li>Une succion peu efficace ou des claquements pendant les tétées</li>
+                    <li>Une préférence pour tourner la tête d’un seul côté</li>
+                    <li>Des tensions corporelles ou une mobilité réduite</li>
+                    <li>Des difficultés à trouver des positions confortables</li>
+                    <li>Une agitation ou un inconfort pendant les temps d’éveil</li>
+                  </ul>
+                  <p>Ces manifestations peuvent avoir différentes origines et méritent une attention particulière.</p>
+                </section>
+                <section>
+                  <h4>Comment l’ostéopathie peut-elle accompagner cette période à Paris&nbsp;?</h4>
+                  <p>Lors d’une consultation, je prends le temps d’échanger avec vous sur votre grossesse, le déroulement de la naissance et les éventuelles difficultés rencontrées depuis l’arrivée de bébé.</p>
+                  <p>J’observe ensuite sa posture, sa mobilité et son confort, en tenant compte de son âge et de ses besoins. À l’aide de techniques douces et adaptées, je peux accompagner les tensions et les restrictions de mobilité identifiées.</p>
+                  <p>Chaque bébé est unique : la prise en charge est individualisée et se déroule dans le respect de son rythme.</p>
+                </section>
+                <p>Mon objectif : accompagner maman et bébé dans cette belle période de transition, favoriser leur confort et vous aider à vivre ces premiers moments plus sereinement.</p>
+                <p>Parce que prendre soin de bébé, c’est aussi prendre soin de ses parents.</p>
+                <p className="blog-disclaimer"><strong>Consultations :</strong> ostéopathie pour les femmes enceintes et les nourrissons à Paris.</p>
+              </div>
+            </details>
+          </div>
+        </article>
       </div>
     </section>
   )
