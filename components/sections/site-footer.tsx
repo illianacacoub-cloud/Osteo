@@ -23,6 +23,7 @@ export function SiteFooter() {
 
         <div>
           <p className="footer-heading">Mentions</p>
+          <p><a href="#blog">Le blog</a></p>
           <p><a href="#mentions">Mentions légales</a></p>
           <p className="footer-muted">© {new Date().getFullYear()} Illiana Cacoub. Tous droits réservés.</p>
         </div>

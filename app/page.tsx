@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 
 import { MutuelleDialog, MutuelleTrigger } from '@/components/mutuelle-dialog'
 import { Approche } from '@/components/sections/approche'
+import { Blog } from '@/components/sections/blog'
 import { Faq } from '@/components/sections/faq'
 import { Infos } from '@/components/sections/infos'
 import { Motifs } from '@/components/sections/motifs'
@@ -165,6 +166,7 @@ export default function Page() {
       <Seance />
       <Infos />
       <Faq />
+      <Blog />
       <SiteFooter />
       <MutuelleDialog />
     </main>
