@@ -11,3 +11,7 @@ node_modules
 next-env.d.ts
 *.tsbuildinfo
 package-lock.json
+
+# Outillage agents (local)
+.impeccable/
+.ruv-swarm/
