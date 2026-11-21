@@ -223,3 +223,137 @@ export const faq = [
       "Jambes lourdes, rétention d'eau, œdèmes, fatigue, stress, récupération (selon indication) ou démarche de bien-être.",
   },
 ]
+
+export const BLOG_AUTHOR = 'Par Illiana Cacoub, ostéopathe D.O. à Paris 3'
+
+export const BLOG_DISCLAIMER_LABEL = 'Information importante'
+export const BLOG_DISCLAIMER_BODY =
+  'L’ostéopathie ne se substitue pas à un diagnostic ou à un traitement médical. En cas de douleur intense, inhabituelle, persistante ou accompagnée de symptômes inquiétants, demandez un avis médical.'
+
+export const blogArticles: {
+  slug: string
+  image: string
+  alt: string
+  label: string
+  date: string
+  place: string
+  title: string
+  excerpt: string
+  intro: string[]
+  sections: { title?: string; paragraphs: string[]; items?: string[] }[]
+}[] = [
+  {
+    slug: 'maternite-nourrisson-paris',
+    image: '/blog-maternite-nourrisson-paris.png',
+    alt: "Massage doux des pieds d'un nourrisson",
+    label: 'Grossesse & nourrisson',
+    date: 'Novembre 2026',
+    place: 'Paris',
+    title: 'Maternité et nourrisson : ostéopathie à Paris',
+    excerpt:
+      'Grossesse, arrivée de bébé, allaitement, sommeil, tensions corporelles… La maternité est une période de grands changements, aussi bien pour la maman que pour son bébé.',
+    intro: [
+      'À Paris, je vous accompagne pendant la grossesse et après la naissance, pour vous aider à traverser ces différentes étapes avec davantage de confort et de sérénité.',
+      'Pendant la grossesse, le corps s’adapte progressivement pour accompagner le développement du bébé. Après la naissance, le nourrisson découvre son nouvel environnement et développe peu à peu ses capacités motrices et sensorielles. Ces différentes étapes peuvent parfois s’accompagner d’inconforts ou de tensions.',
+    ],
+    sections: [
+      {
+        title: 'Pendant la grossesse',
+        paragraphs: ['Les transformations du corps peuvent entraîner différentes manifestations :'],
+        items: [
+          'Douleurs lombaires et tensions dans le bassin',
+          'Sensation de pesanteur',
+          'Tensions dans le dos et les cervicales',
+          'Inconfort au niveau du diaphragme et de la respiration',
+          'Difficultés à trouver une position confortable pour dormir',
+        ],
+      },
+      {
+        paragraphs: [
+          'L’ostéopathie peut accompagner la future maman dans cette période de changements, en travaillant sur sa mobilité et son confort au quotidien.',
+        ],
+      },
+      {
+        title: 'Après la naissance : accompagner bébé',
+        paragraphs: [
+          'La naissance et les premières semaines de vie sont une période d’adaptation importante pour le nourrisson. Certains bébés peuvent présenter des manifestations telles que :',
+        ],
+        items: [
+          'Des difficultés à téter au sein ou au biberon',
+          'Une succion peu efficace ou des claquements pendant les tétées',
+          'Une préférence pour tourner la tête d’un seul côté',
+          'Des tensions corporelles ou une mobilité réduite',
+          'Des difficultés à trouver des positions confortables',
+          'Une agitation ou un inconfort pendant les temps d’éveil',
+        ],
+      },
+      {
+        paragraphs: ['Ces manifestations peuvent avoir différentes origines et méritent une attention particulière.'],
+      },
+      {
+        title: 'Comment l’ostéopathie peut-elle accompagner cette période à Paris ?',
+        paragraphs: [
+          'Lors d’une consultation, je prends le temps d’échanger avec vous sur votre grossesse, le déroulement de la naissance et les éventuelles difficultés rencontrées depuis l’arrivée de bébé.',
+          'J’observe ensuite sa posture, sa mobilité et son confort, en tenant compte de son âge et de ses besoins. À l’aide de techniques douces et adaptées, je peux accompagner les tensions et les restrictions de mobilité identifiées.',
+          'Chaque bébé est unique : la prise en charge est individualisée et se déroule dans le respect de son rythme.',
+        ],
+      },
+      {
+        paragraphs: [
+          'Mon objectif : accompagner maman et bébé dans cette belle période de transition, favoriser leur confort et vous aider à vivre ces premiers moments plus sereinement.',
+          'Parce que prendre soin de bébé, c’est aussi prendre soin de ses parents.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'osteopathe-paris-3',
+    image: '/blog-osteopathie-paris-3.png',
+    alt: "Soin manuel du dos lors d'une séance d'ostéopathie",
+    label: 'Conseils & pratique',
+    date: 'Novembre 2026',
+    place: 'Paris 3',
+    title: 'Ostéopathe à Paris 3 : pourquoi consulter un ostéopathe ?',
+    excerpt:
+      'Que vous souffriez de tensions musculaires, de douleurs au dos, de gênes articulaires ou que vous souhaitiez faire le point sur votre confort au quotidien, une consultation peut être l’occasion de bénéficier d’une prise en charge manuelle adaptée à votre situation.',
+    intro: [
+      'Au cabinet d’Illiana Cacoub, chaque consultation commence par un échange afin de comprendre vos besoins, votre mode de vie et vos éventuelles douleurs.',
+    ],
+    sections: [
+      {
+        title: 'Qu’est-ce que l’ostéopathie ?',
+        paragraphs: [
+          'L’ostéopathie est une approche de soin manuelle qui s’intéresse notamment à la mobilité des différentes structures du corps : articulations, muscles, ligaments et tissus.',
+          'Elle repose sur une évaluation individualisée et sur des techniques manuelles choisies en fonction de chaque personne. L’objectif d’une séance est de contribuer à améliorer le confort et la mobilité, lorsque cela est indiqué, en tenant compte de votre état de santé et de vos attentes.',
+        ],
+      },
+      {
+        title: 'Dans quelles situations consulter à Paris 3 ?',
+        paragraphs: [
+          'Il est possible de consulter un ostéopathe pour différentes gênes ou douleurs fonctionnelles : douleurs du dos et tensions musculaires, douleurs cervicales liées au quotidien, accompagnement de la grossesse et du post-partum, suivi adapté des nourrissons et des enfants, ou encore récupération physique chez les sportifs.',
+          'Une consultation permet de faire le point sur ces gênes et d’évaluer si une prise en charge ostéopathique est adaptée à votre situation.',
+        ],
+      },
+      {
+        title: 'Comment se déroule une consultation ?',
+        paragraphs: [
+          'La séance commence par un échange sur vos douleurs, vos antécédents, votre mode de vie et vos attentes. Des tests et observations permettent ensuite d’évaluer votre mobilité et de déterminer si une prise en charge ostéopathique est appropriée.',
+          'Des techniques adaptées à votre âge, votre état de santé et vos besoins peuvent être proposées. La séance se termine par des conseils personnalisés et, si nécessaire, une orientation vers un autre professionnel de santé.',
+        ],
+      },
+      {
+        title: 'Pourquoi consulter Illiana Cacoub, ostéopathe à Paris 3 ?',
+        paragraphs: [
+          'Consulter un ostéopathe, c’est avant tout bénéficier d’un temps d’écoute et d’une prise en charge individualisée. Au cabinet, l’accompagnement est adapté à votre profil et à vos besoins, que vous soyez adulte, sportif, femme enceinte, jeune parent ou que vous souhaitiez consulter pour votre enfant.',
+          'Chaque personne est unique : les techniques et les conseils sont choisis en fonction de la situation rencontrée.',
+        ],
+      },
+      {
+        title: 'Prendre rendez-vous avec votre ostéopathe à Paris 3',
+        paragraphs: [
+          'Vous pouvez prendre rendez-vous avec Illiana Cacoub directement en ligne via Doctolib. N’hésitez pas à consulter les informations pratiques du cabinet pour connaître les disponibilités, les tarifs et les modalités de consultation.',
+        ],
+      },
+    ],
+  },
+]
