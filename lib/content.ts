@@ -18,6 +18,8 @@ import {
 
 export const SITE_URL = 'https://osteo.tfq.one'
 
+export const GTM_ID = 'GTM-5G4HJJKX'
+
 export const DOCTOLIB_URL =
   'https://doctolib.fr/osteopathe/paris/illiana-cacoub/booking?source=landing_page'
 

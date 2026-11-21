@@ -8,6 +8,7 @@ import {
   ADDRESS_POSTCODE,
   ADDRESS_STREET,
   DOCTOLIB_URL,
+  GTM_ID,
   PHONE_DISPLAY,
   SITE_URL,
 } from '@/lib/content'
@@ -94,6 +95,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        <script async src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());`,
+          }}
+        />
+      </head>
       <body className="antialiased">
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
